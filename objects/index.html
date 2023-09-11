@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function render(element) {
+            if (!element || typeof element !== 'object' || !element.name) {
+                return ''; // در صورتی که ورودی نامعتبر باشد، خروجی خالی برگردانید.
+            }
+
+            const { name, attributes = [], children = [] } = element;
+
+            const attributeString = attributes
+                .map(attr => `${attr.key}="${attr.value}"`)
+                .join(' ');
+
+            const childElements = children.map(child => {
+                if (typeof child === 'string') {
+                    return child; // اگر فرزند یک رشته است، آن را به عنوان متن در نظر بگیرید.
+                } else {
+                    return render(child); // اگر فرزند یک آبجکت است، آن را به صورت بازگشتی پردازش کنید.
+                }
+            }).join('\n');
+
+            return `<${name} ${attributeString}>
+    ${childElements}
+  </${name}>`;
+        }
+
+        // مثال استفاده:
+        const inputObject = {
+            name: 'div',
+            attributes: [{ key: 'class', value: 'container' }, { key: 'id', value: 'some-id' }],
+            children: [
+                'Salam',
+                {
+                    name: 'p',
+                    attributes: [{ key: 'class', value: 'text-bold' }],
+                    children: ['Some Text']
+                }
+            ]
+        };
+
+        const renderedHTML = render(inputObject);
+        console.log(renderedHTML);
+
+
+
+    </script>
+</body>
+
+
+
+
+</html>

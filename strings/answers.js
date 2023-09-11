@@ -14,16 +14,22 @@ function censorWords(inputString, badWords) {
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a2b488b767741d0ed72b562012cbef6e5439d445
 function reverseString(inputString) {
   return inputString.split('').reverse().join('');
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> a2b488b767741d0ed72b562012cbef6e5439d445
 
 const farsiNumber = '۰۱۲۳۴۵۶۷۸۹';
 function toPersian(inputString) {

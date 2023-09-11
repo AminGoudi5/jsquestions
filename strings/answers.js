@@ -15,18 +15,12 @@ function censorWords(inputString, badWords) {
 
 
 
-const input = "This is an bad message with badtar words.";
-const badWords = ["bad", "badtar"];
-
-const censoredOutput = censorWords(input, badWords);
-
 
 function reverseString(inputString) {
   return inputString.split('').reverse().join('');
 }
 
-const jomle = 'As sly as a fox, as strong as an ox'
-const reversString = reverseString(jomle);
+
 
 
 
